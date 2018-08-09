@@ -52,7 +52,7 @@ namespace QLC.Controllers.UserModelsControllers
                         Id = model.Id,
                         Name = model.IsAdmin ? "Administrator" : string.Empty,
                         Description = model.Description,
-                        IsAdmin = model.IsAdmin,
+                        IsSystemAdmin = model.IsAdmin,
                     };
 
                 }
@@ -68,7 +68,7 @@ namespace QLC.Controllers.UserModelsControllers
                 {
                     Roles applicationRole = await roleManager.FindByIdAsync(id);
                     applicationRole.Description = model.Description;
-                    applicationRole.IsAdmin = model.IsAdmin;
+                    applicationRole.IsSystemAdmin = model.IsAdmin;
                     IdentityResult roleRuslt = applicationRole != null ? await roleManager.UpdateAsync(applicationRole) : await roleManager.CreateAsync(applicationRole);
                     if (roleRuslt.Succeeded)
                     {

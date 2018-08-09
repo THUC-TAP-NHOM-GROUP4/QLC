@@ -7,7 +7,8 @@ namespace User.Models
 {
     public class Roles : IdentityRole
     {
-        public bool IsAdmin { get; set; }
+        public bool IsSystemAdmin { get; set; }
         public string Description { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

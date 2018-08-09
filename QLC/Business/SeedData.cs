@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using User.Models;
@@ -20,7 +21,8 @@ namespace Business
                 {
                     Name = "Requester",
                     Description = "Request",
-                    IsAdmin = false,
+                    IsSystemAdmin = false,
+                    CreatedDate = DateTime.Now
                 };
                 IdentityResult roleResult = roleManager.CreateAsync(role).Result;
             }
@@ -31,7 +33,8 @@ namespace Business
                 {
                     Name = "Approver",
                     Description = "Approval",
-                    IsAdmin = false,
+                    IsSystemAdmin = false,
+                    CreatedDate = DateTime.Now
                 };
                 IdentityResult roleResult = roleManager.CreateAsync(role).Result;
             }
@@ -42,7 +45,8 @@ namespace Business
                 {
                     Name = "Administrator",
                     Description = "Admin",
-                    IsAdmin = true,
+                    IsSystemAdmin = true,
+                    CreatedDate = DateTime.Now
                 };
                 IdentityResult roleResult = roleManager.CreateAsync(role).Result;
             }
@@ -56,7 +60,8 @@ namespace Business
                 Users user = new Users()
                 {
                     UserName = "Administrator",
-                    Email = "admin@nccsoft.vn"
+                    Email = "admin@nccsoft.vn",
+                    DateOfBirth=DateTime.Now
                 };
 
                 IdentityResult result = userManager.CreateAsync(user, "Password1!").Result;
