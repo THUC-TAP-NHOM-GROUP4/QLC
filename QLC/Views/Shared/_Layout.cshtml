@@ -33,6 +33,8 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="ApplicationRole" asp-action="Index">Role</a></li>
                     <li><a asp-area="" asp-controller="User" asp-action="Index">User</a></li>
+                    <li><a asp-area="" asp-controller="Requests" asp-action="Index">Request</a></li>
+                    <li><a asp-area="" asp-controller="Approve" asp-action="Index">Approve</a></li>
                 </ul>
                 @await Html.PartialAsync("_UserHeader")
             </div>
@@ -61,6 +63,8 @@
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

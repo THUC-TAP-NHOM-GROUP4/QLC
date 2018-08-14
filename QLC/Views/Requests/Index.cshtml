@@ -1,0 +1,82 @@
+﻿@model IEnumerable<RequestViewModel>
+@using QLC.Models.UserViewModel
+@using QLC.Models.RepuestViewModel
+@using QLC.Business
+
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading page-header">Request</div>
+    <div class="panel-body">
+        <div class="btn-group">
+            <a id="CreateRequest" data-toggle="modal" asp-action="AddRequest" data-target="#modal-action-request" class="btn btn-primary">
+                <i class="glyphicon glyphicon-plus">Add Request</i>
+            </a>
+        </div>
+        <div class="top-buffer"></div>
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Request Name</th>
+                    <th>Start Date</th>
+                    <th>Finish Date</th>
+                    <th>Into Money</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                <tr>
+                    <td>@item.ResquestName</td>
+                    <td>@item.StartDate</td>
+                    <td>@item.FinishDate</td>
+                    <td>@item.Money</td>
+                    <td>@item.StatusName</td>
+                    <td>
+                        <a data-toggle="modal" class="btn btn-info" asp-action="EditRequest" asp-route-RequestId="@item.RequestId" data-target="#modal-action-request">
+                            <i class="glyphicon glyphicon-pencil">Edit</i>
+                        </a>
+                        @if (item.StateId == 3)
+                        {
+                            <a data-toggle="modal" class="btn btn-info" asp-action="EditRequest" asp-route-RequestId="@item.RequestId" data-target="#modal-action-request">
+                                <i class="glyphicon glyphicon-pencil">Delete</i>
+                            </a>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.Partial("_Modal", new BootstrapModel { ID= "modal-action-request", AreaLabeledId= "modal-action-request-label", Size= ModalSize.Medium})
+
+@section scripts{ 
+    <script src="~/js/request.js" asp-append-version="true"></script>
+<script>
+    $(document).ready(function () {
+        $('#AddRequest').validate({
+            onclick: false,
+            rule: {
+                state: "required"
+            },
+            messages: {
+                state: {
+                    required: "THe State is required!"
+                }
+            },
+            errRequestName: function (error, element) {
+                alert("loi");
+            },
+            submitHandler: function (form) {
+
+                alert("success");
+                return false;
+            }   
+        });
+    });
+</script>
+}

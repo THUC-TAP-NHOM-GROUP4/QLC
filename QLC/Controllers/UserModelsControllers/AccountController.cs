@@ -5,9 +5,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using QLC.Business;
 using QLC.Business.EmailSender;
 using QLC.Business.Extensions;
 using QLC.Models.AccountViewModels;
@@ -22,6 +24,7 @@ namespace QLC.Controllers.UserModelsControllers
         private readonly SignInManager<Users> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+       
 
         public AccountController(
             UserManager<Users> userManager,
@@ -54,12 +57,14 @@ namespace QLC.Controllers.UserModelsControllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+           
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    HttpContext.Session.SetString("username", model.UserName);
                     _logger.LogInformation("User logged in.");
                     return RedirectToLocal(returnUrl);
                 }

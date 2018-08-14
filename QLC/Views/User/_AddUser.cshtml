@@ -2,7 +2,7 @@
 @using QLC.Models.UserViewModel
 
 <form asp-action="AddUser" role="form">
-    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = "Add User" })
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = $"{(String.IsNullOrEmpty(Model.Id) ? "Add" : "Edit")} User" })
     <div class="modal-body form-horizontal">
         <div class="row">
             <div class="col-lg-6">

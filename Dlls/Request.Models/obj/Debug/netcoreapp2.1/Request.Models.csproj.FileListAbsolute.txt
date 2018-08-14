@@ -1,0 +1,11 @@
+E:\Project\QLC\Dlls\Request.Models\bin\Debug\netcoreapp2.1\Request.Models.deps.json
+E:\Project\QLC\Dlls\Request.Models\bin\Debug\netcoreapp2.1\Request.Models.dll
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.csprojAssemblyReference.cache
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.csproj.CoreCompileInputs.cache
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.AssemblyInfoInputs.cache
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.AssemblyInfo.cs
+E:\Project\QLC\Dlls\Request.Models\bin\Debug\netcoreapp2.1\Request.Models.runtimeconfig.json
+E:\Project\QLC\Dlls\Request.Models\bin\Debug\netcoreapp2.1\Request.Models.runtimeconfig.dev.json
+E:\Project\QLC\Dlls\Request.Models\bin\Debug\netcoreapp2.1\Request.Models.pdb
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.dll
+E:\Project\QLC\Dlls\Request.Models\obj\Debug\netcoreapp2.1\Request.Models.pdb

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Business;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using QLC.Business.EmailSender;
+using Request.Models;
 using User.Models;
 
 namespace QLC
@@ -26,10 +28,12 @@ namespace QLC
         {
             services.AddDbContext<UserDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            //services.AddDbContext<RequestDbContext>(options =>
+            //   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<Users, Roles>()
                 .AddEntityFrameworkStores<UserDbContext>()
                 .AddDefaultTokenProviders();
+         
 
 
             //Password Strength Setting
@@ -67,7 +71,7 @@ namespace QLC
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddSession();
             services.AddMvc();
         }
 
@@ -89,7 +93,7 @@ namespace QLC
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-
+            app.UseSession();
             SeedData.Seeding(userManager, roleManager, context);
 
             app.UseMvc(routes =>

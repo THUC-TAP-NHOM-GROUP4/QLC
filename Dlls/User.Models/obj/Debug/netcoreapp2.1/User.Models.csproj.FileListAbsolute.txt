@@ -1,0 +1,11 @@
+E:\Project\QLC\Dlls\User.Models\bin\Debug\netcoreapp2.1\User.Models.deps.json
+E:\Project\QLC\Dlls\User.Models\bin\Debug\netcoreapp2.1\User.Models.runtimeconfig.json
+E:\Project\QLC\Dlls\User.Models\bin\Debug\netcoreapp2.1\User.Models.runtimeconfig.dev.json
+E:\Project\QLC\Dlls\User.Models\bin\Debug\netcoreapp2.1\User.Models.dll
+E:\Project\QLC\Dlls\User.Models\bin\Debug\netcoreapp2.1\User.Models.pdb
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.csproj.CoreCompileInputs.cache
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.AssemblyInfoInputs.cache
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.AssemblyInfo.cs
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.dll
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.pdb
+E:\Project\QLC\Dlls\User.Models\obj\Debug\netcoreapp2.1\User.Models.csprojAssemblyReference.cache

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Request.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using User.Models;
@@ -51,8 +53,8 @@ namespace Business
                 IdentityResult roleResult = roleManager.CreateAsync(role).Result;
             }
             context.SaveChanges();
-        }
 
+        }
         public static void SeedUsers(UserManager<Users> userManager, UserDbContext context)
         {
             if (userManager.FindByNameAsync("Administrator").Result == null)
@@ -73,5 +75,6 @@ namespace Business
                 context.SaveChanges();
             }
         }
+      
     }
 }

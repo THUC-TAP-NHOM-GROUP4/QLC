@@ -2,7 +2,7 @@
 @model EditUserViewModel
 
 <form asp-action="EditUser" role="form">
-    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = "Edit User" })
+    @await Html.PartialAsync("_ModalHeader", new ModalHeader { Heading = $"{(String.IsNullOrEmpty(Model.Id) ? "Add" : "Edit")} User" })
     <div class="modal-body form-horizontal">
         <div class="row">
             <div class="form-group">
